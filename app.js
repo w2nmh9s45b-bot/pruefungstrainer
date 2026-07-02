@@ -4,16 +4,37 @@
 
   var STORAGE_KEY = "pruefungstrainer-state-v1";
 
+  /* Module (Überordner) – auf oberster Ebene der Startseite. */
+  var MODULE_META = {
+    "Modul 2": {
+      icon: "⚖️",
+      desc: "Rechtliche Grundlagen – Privatrechtliches Handeln der Verwaltung (BGB)"
+    },
+    "Modul 5": {
+      icon: "🏛️",
+      desc: "Besonderes Verwaltungsrecht – Baurecht und Kommunalrecht"
+    }
+  };
+  var MODULE_ORDER = ["Modul 2", "Modul 5"];
+
   /* Optionale Metadaten je Fach (Ordner). Neue Fächer entstehen automatisch,
-     sobald ein Schema mit neuem subject registriert wird. */
+     sobald ein Schema mit neuem subject registriert wird; module ordnet das
+     Fach einem Überordner zu. */
   var SUBJECT_META = {
     "Baurecht": {
+      module: "Modul 5",
       icon: "🏗️",
       desc: "Baugenehmigung, Maßnahmen der Bauaufsicht, Nachbarschutz und Bauleitplanung – LBauO RLP, BauGB, BauNVO"
     },
     "Kommunalrecht": {
+      module: "Modul 5",
       icon: "🏛️",
       desc: "Selbstverwaltung, Aufsicht, Satzungen, Ratsbeschlüsse, Wahlen und Rechtsschutz – GemO RLP, KWG, GG/LV"
+    },
+    "Privatrecht": {
+      module: "Modul 2",
+      icon: "📜",
+      desc: "BGB: Vertragslehre, Geschäftsfähigkeit, Stellvertretung, Fristen, Sachen-, Bereicherungs- und Deliktsrecht, Leistungsstörungen, Kaufrecht, Grundstücksrecht"
     }
   };
 
@@ -42,7 +63,8 @@
 
   /* state = null → Navigation; sonst { schemaId, nodeId, flags, trail, history } */
   var state = null;
-  /* aktuell geöffneter Fach-Ordner (nur Navigation, nicht persistiert) */
+  /* aktuell geöffneter Modul-/Fach-Ordner (nur Navigation, nicht persistiert) */
+  var currentModule = null;
   var currentSubject = null;
 
   function save() {
@@ -82,6 +104,27 @@
     return window.SCHEMATA.filter(function (s) { return (s.subject || "Sonstige") === subject; });
   }
 
+  function moduleOf(subject) {
+    return (SUBJECT_META[subject] && SUBJECT_META[subject].module) || "Weitere";
+  }
+
+  function getModules() {
+    var seen = {}, list = [];
+    getSubjects().forEach(function (sub) {
+      var m = moduleOf(sub);
+      if (!seen[m]) { seen[m] = true; list.push(m); }
+    });
+    list.sort(function (a, b) {
+      var ia = MODULE_ORDER.indexOf(a), ib = MODULE_ORDER.indexOf(b);
+      return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+    });
+    return list;
+  }
+
+  function subjectsOf(mod) {
+    return getSubjects().filter(function (sub) { return moduleOf(sub) === mod; });
+  }
+
   function resolveNext(schema, next, flags) {
     var guard = 0;
     while (typeof next === "string" && next.charAt(0) === "@") {
@@ -95,31 +138,35 @@
     return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
 
-  /* ---------------- Startseite: Fach-Ordner ---------------- */
+  /* ---------------- Startseite: Modul-Ordner ---------------- */
 
   function renderHome() {
     /* state nur verlassen, nicht löschen – angefangene Prüfung bleibt fortsetzbar */
     state = null;
+    currentModule = null;
     currentSubject = null;
     el.title.textContent = "Prüfungstrainer";
     el.stations.innerHTML = "";
     el.btnBack.disabled = true;
 
     var saved = load();
+    var savedSubject = saved && getSchema(saved.schemaId) ? (getSchema(saved.schemaId).subject || "Sonstige") : null;
     var html = '<div class="home-hero">' +
       '<div class="para">§</div>' +
       "<h1>Prüfungstrainer</h1>" +
-      "<p>Wähle ein Fach – darin findest du die Prüfungsschemata zum interaktiven Durchklicken.</p>" +
+      "<p>Wähle ein Modul – darin findest du die Fächer mit ihren Prüfungsschemata zum interaktiven Durchklicken.</p>" +
       "</div>";
 
-    getSubjects().forEach(function (sub) {
-      var meta = SUBJECT_META[sub] || {};
-      var n = schemataOf(sub).length;
-      var resume = saved && getSchema(saved.schemaId) && (getSchema(saved.schemaId).subject || "Sonstige") === sub;
-      html += '<button class="folder-card" data-subject="' + esc(sub) + '">' +
-        '<span class="fc-icon">' + (meta.icon || "📚") + "</span>" +
-        '<span class="fc-body"><span class="fc-name">' + esc(sub) + "</span>" +
-        '<span class="fc-count">' + n + " Schema" + (n === 1 ? "" : "ta") + (meta.desc ? " · " + esc(meta.desc) : "") + "</span>" +
+    getModules().forEach(function (mod) {
+      var meta = MODULE_META[mod] || {};
+      var subs = subjectsOf(mod);
+      var n = 0;
+      subs.forEach(function (sub) { n += schemataOf(sub).length; });
+      var resume = savedSubject && moduleOf(savedSubject) === mod;
+      html += '<button class="folder-card" data-module="' + esc(mod) + '">' +
+        '<span class="fc-icon">' + (meta.icon || "📁") + "</span>" +
+        '<span class="fc-body"><span class="fc-name">' + esc(mod) + "</span>" +
+        '<span class="fc-count">' + subs.length + (subs.length === 1 ? " Fach" : " Fächer") + " · " + n + " Schema" + (n === 1 ? "" : "ta") + (meta.desc ? " · " + esc(meta.desc) : "") + "</span>" +
         (resume ? '<span class="sc-resume">▸ Angefangene Prüfung fortsetzen</span>' : "") +
         "</span>" +
         '<span class="fc-chev">›</span>' +
@@ -128,9 +175,51 @@
 
     html += '<button class="folder-card disabled" disabled>' +
       '<span class="fc-icon">＋</span>' +
-      '<span class="fc-body"><span class="fc-name">Weitere Fächer</span>' +
-      '<span class="fc-count">Hier ist Platz für künftige Fächer (z. B. AVR).</span></span>' +
+      '<span class="fc-body"><span class="fc-name">Weitere Module</span>' +
+      '<span class="fc-count">Hier ist Platz für künftige Module und Fächer (z. B. AVR in Modul 2).</span></span>' +
       "</button>";
+
+    el.screen.innerHTML = html;
+    el.screen.querySelectorAll(".folder-card[data-module]").forEach(function (card) {
+      card.addEventListener("click", function () {
+        renderModule(card.getAttribute("data-module"));
+      });
+    });
+    window.scrollTo(0, 0);
+  }
+
+  /* ---------------- Modul-Ansicht: Fach-Ordner ---------------- */
+
+  function renderModule(mod) {
+    state = null;
+    currentModule = mod;
+    currentSubject = null;
+    el.title.textContent = mod;
+    el.stations.innerHTML = "";
+    el.btnBack.disabled = false;
+
+    var saved = load();
+    var savedSubject = saved && getSchema(saved.schemaId) ? (getSchema(saved.schemaId).subject || "Sonstige") : null;
+    var meta = MODULE_META[mod] || {};
+    var html = '<div class="subject-head">' +
+      '<span class="sh-icon">' + (meta.icon || "📁") + "</span>" +
+      "<div><h1>" + esc(mod) + "</h1>" +
+      (meta.desc ? "<p>" + esc(meta.desc) + "</p>" : "") +
+      "</div></div>";
+
+    subjectsOf(mod).forEach(function (sub) {
+      var smeta = SUBJECT_META[sub] || {};
+      var n = schemataOf(sub).length;
+      var resume = savedSubject === sub;
+      html += '<button class="folder-card" data-subject="' + esc(sub) + '">' +
+        '<span class="fc-icon">' + (smeta.icon || "📚") + "</span>" +
+        '<span class="fc-body"><span class="fc-name">' + esc(sub) + "</span>" +
+        '<span class="fc-count">' + n + " Schema" + (n === 1 ? "" : "ta") + (smeta.desc ? " · " + esc(smeta.desc) : "") + "</span>" +
+        (resume ? '<span class="sc-resume">▸ Angefangene Prüfung fortsetzen</span>' : "") +
+        "</span>" +
+        '<span class="fc-chev">›</span>' +
+        "</button>";
+    });
 
     el.screen.innerHTML = html;
     el.screen.querySelectorAll(".folder-card[data-subject]").forEach(function (card) {
@@ -145,6 +234,7 @@
 
   function renderSubject(subject) {
     state = null;
+    currentModule = moduleOf(subject);
     currentSubject = subject;
     el.title.textContent = subject;
     el.stations.innerHTML = "";
@@ -237,6 +327,7 @@
   function render() {
     if (!state) {
       if (currentSubject) renderSubject(currentSubject);
+      else if (currentModule) renderModule(currentModule);
       else renderHome();
       return;
     }
@@ -315,6 +406,8 @@
       save();
       render();
     } else if (currentSubject) {
+      renderModule(moduleOf(currentSubject));
+    } else if (currentModule) {
       renderHome();
     }
   }
