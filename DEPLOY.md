@@ -1,6 +1,8 @@
 # Deployment – Stand 02.07.2026
 
-**Status:** Die App war bisher NICHT online (kein GitHub-Repo vorhanden, `https://w2nmh9s45b-bot.github.io/...` → 404). Das lokale Git-Repo ist vorbereitet: alle 31 Dateien sind committet (`main`, Commit „Prüfungstrainer PWA: Baurecht + Kommunalrecht“).
+**Status: LIVE.** Die App ist online unter **https://w2nmh9s45b-bot.github.io/pruefungstrainer/** (GitHub Pages, Branch `main`, Ordner `/root`, HTTPS erzwungen). Repo: https://github.com/w2nmh9s45b-bot/pruefungstrainer (public). Alle Dateien wurden per Drag & Drop hochgeladen und per SHA-256 gegen die lokalen Dateien verifiziert (byte-identisch).
+
+**Update-Workflow für künftige Änderungen:** Lokal in `/Users/moritzschmidt/Brain/Apps/Pruefungstrainer` ändern, `git add -A && git commit -m "..."`, dann die geänderten Dateien erneut über die GitHub-Weboberfläche hochladen (Datei anklicken → Stift-Icon „Edit this file“ oder erneut per Drag & Drop auf `/upload/main`). Ohne Terminal-Zugriff auf `git push` (kein Token hinterlegt) bleibt der Weg über die Weboberfläche nötig, siehe „Weg B" unten.
 
 **Dein GitHub-Konto:** `w2nmh9s45b-bot` – erstellt am 08.06.2026 über **„Sign in with Apple“** (mit deiner Apple-ID, E-Mail-Relay `w2nmh9s45b@privaterelay.appleid.com`). Es gibt kein gespeichertes Passwort auf dem Mac; der Login läuft über Apple.
 
