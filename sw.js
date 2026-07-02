@@ -1,5 +1,5 @@
 /* Prüfungstrainer – Service Worker: App-Shell offline verfügbar machen */
-var CACHE = "pruefungstrainer-v3";
+var CACHE = "pruefungstrainer-v4";
 var ASSETS = [
   "./",
   "./index.html",
@@ -25,6 +25,22 @@ var ASSETS = [
   "./schema-komr-kvs.js",
   "./schema-komr-einrichtungen.js",
   "./schema-komr-verpflichtungserklaerung.js",
+  "./schema-pr-anspruch.js",
+  "./schema-pr-geschaeftsfaehigkeit.js",
+  "./schema-pr-stellvertretung.js",
+  "./schema-pr-fristen.js",
+  "./schema-pr-verjaehrung.js",
+  "./schema-pr-eigentumserwerb.js",
+  "./schema-pr-herausgabe.js",
+  "./schema-pr-bereicherung.js",
+  "./schema-pr-delikt.js",
+  "./schema-pr-unmoeglichkeit.js",
+  "./schema-pr-schadensersatz.js",
+  "./schema-pr-glaeubigerverzug.js",
+  "./schema-pr-kauf-nacherfuellung.js",
+  "./schema-pr-kauf-ruecktritt.js",
+  "./schema-pr-kauf-schadensersatz.js",
+  "./schema-pr-grundstueck.js",
   "./manifest.webmanifest",
   "./icons/icon.svg",
   "./icons/icon-192.png",
