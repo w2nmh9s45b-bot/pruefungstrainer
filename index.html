@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <title>Prüfungstrainer</title>
+  <meta name="description" content="Interaktive Prüfungsschemata für das Verwaltungsstudium – Baurecht (LBauO RLP, BauGB, BauNVO) und Kommunalrecht (GemO RLP, KWG)">
+  <meta name="theme-color" content="#1d3557">
+  <!-- iOS PWA -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Prüfungstrainer">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <header id="topbar">
+      <button id="btn-home" class="iconbtn" title="Startseite" aria-label="Startseite">⌂</button>
+      <div id="topbar-title">Prüfungstrainer</div>
+      <button id="btn-restart" class="iconbtn" title="Prüfung neu starten" aria-label="Neu starten">↺</button>
+    </header>
+
+    <nav id="stations" aria-label="Prüfungsstationen"></nav>
+
+    <main id="screen"></main>
+
+    <footer id="bottombar">
+      <button id="btn-back" class="navbtn" disabled>← Zurück</button>
+      <button id="btn-trail" class="navbtn">Prüfungsverlauf</button>
+    </footer>
+
+    <div id="trail-sheet" class="sheet hidden" role="dialog" aria-label="Prüfungsverlauf">
+      <div class="sheet-handle"></div>
+      <h2>Prüfungsverlauf</h2>
+      <ol id="trail-list"></ol>
+      <button id="btn-trail-close" class="navbtn">Schließen</button>
+    </div>
+  </div>
+
+  <script src="schema-baugenehmigung.js"></script>
+  <script src="schema-bauaufsicht.js"></script>
+  <script src="schema-nachbarschutz.js"></script>
+  <script src="schema-einschreiten.js"></script>
+  <script src="schema-bebauungsplan.js"></script>
+  <script src="schema-plansicherung.js"></script>
+  <script src="schema-komr-aufgaben.js"></script>
+  <script src="schema-komr-selbstverwaltung.js"></script>
+  <script src="schema-komr-kommunalaufsicht.js"></script>
+  <script src="schema-komr-satzung.js"></script>
+  <script src="schema-komr-organkompetenz.js"></script>
+  <script src="schema-komr-ratsbeschluss.js"></script>
+  <script src="schema-komr-mitwirkungsverbot.js"></script>
+  <script src="schema-komr-aussetzung.js"></script>
+  <script src="schema-komr-bmwahl.js"></script>
+  <script src="schema-komr-beigeordnete.js"></script>
+  <script src="schema-komr-wahlbeschwerde.js"></script>
+  <script src="schema-komr-kvs.js"></script>
+  <script src="schema-komr-einrichtungen.js"></script>
+  <script src="schema-komr-verpflichtungserklaerung.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
