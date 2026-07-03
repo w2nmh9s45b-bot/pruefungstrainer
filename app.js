@@ -13,9 +13,13 @@
     "Modul 5": {
       icon: "🏛️",
       desc: "Besonderes Verwaltungsrecht – Baurecht und Kommunalrecht"
+    },
+    "Modul 6": {
+      icon: "👥",
+      desc: "Personal, Organisation, Kommunikation – Arbeits- und Tarifrecht (TVöD, TzBfG, EFZG, BUrlG)"
     }
   };
-  var MODULE_ORDER = ["Modul 2", "Modul 5"];
+  var MODULE_ORDER = ["Modul 2", "Modul 5", "Modul 6"];
 
   /* Optionale Metadaten je Fach (Ordner). Neue Fächer entstehen automatisch,
      sobald ein Schema mit neuem subject registriert wird; module ordnet das
@@ -45,6 +49,11 @@
       module: "Modul 2",
       icon: "🇩🇪",
       desc: "Grundrechte, Verfassungsbeschwerde, Gesetzgebung, Staatsorganisation und Staatsstrukturprinzipien (GG, BVerfGG) sowie Europarecht: Rechtsquellen, Richtlinien, Anwendungsvorrang, Grundfreiheiten (EUV, AEUV)"
+    },
+    "Arbeits- und Tarifrecht": {
+      module: "Modul 6",
+      icon: "🤝",
+      desc: "Arbeitsrecht des öffentlichen Dienstes: Arbeitnehmerbegriff, Arbeitsvertrag, Befristung, Kündigung, Beschäftigungszeit, TVöD-Entgeltrecht (Eingruppierung, Stufen, Zulagen, Jahressonderzahlung), Krankheit und Urlaub – TVöD, TzBfG, EFZG, BUrlG, SGB IX"
     }
   };
 
@@ -186,7 +195,7 @@
     html += '<button class="folder-card disabled" disabled>' +
       '<span class="fc-icon">＋</span>' +
       '<span class="fc-body"><span class="fc-name">Weitere Module</span>' +
-      '<span class="fc-count">Hier ist Platz für künftige Module und Fächer (z. B. Modul 3, 4 und 6).</span></span>' +
+      '<span class="fc-count">Hier ist Platz für künftige Module und Fächer (z. B. Modul 1, 3 und 4).</span></span>' +
       "</button>";
 
     el.screen.innerHTML = html;
