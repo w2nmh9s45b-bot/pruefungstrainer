@@ -8,7 +8,7 @@
   var MODULE_META = {
     "Modul 2": {
       icon: "⚖️",
-      desc: "Rechtliche Grundlagen – Privatrecht (BGB) und Staatsrecht/Europarecht (GG, EUV/AEUV)"
+      desc: "Rechtliche Grundlagen – Allgemeines Verwaltungsrecht (VwVfG, VwGO), Privatrecht (BGB) und Staatsrecht/Europarecht (GG, EUV/AEUV)"
     },
     "Modul 5": {
       icon: "🏛️",
@@ -21,6 +21,11 @@
      sobald ein Schema mit neuem subject registriert wird; module ordnet das
      Fach einem Überordner zu. */
   var SUBJECT_META = {
+    "Allgemeines Verwaltungsrecht": {
+      module: "Modul 2",
+      icon: "📋",
+      desc: "Verwaltungsakt (Begriff, Wirksamkeit, Rechtmäßigkeit, Fehlerfolgen, Nebenbestimmungen), Widerspruchsverfahren, Aufhebung, öffentlich-rechtlicher Vertrag, Klagearten, vorläufiger Rechtsschutz, Vollstreckung und staatliche Ersatzleistungen – VwVfG, VwGO, AGVwGO, LVwVG"
+    },
     "Baurecht": {
       module: "Modul 5",
       icon: "🏗️",
@@ -181,7 +186,7 @@
     html += '<button class="folder-card disabled" disabled>' +
       '<span class="fc-icon">＋</span>' +
       '<span class="fc-body"><span class="fc-name">Weitere Module</span>' +
-      '<span class="fc-count">Hier ist Platz für künftige Module und Fächer (z. B. AVR in Modul 2).</span></span>' +
+      '<span class="fc-count">Hier ist Platz für künftige Module und Fächer (z. B. Modul 3, 4 und 6).</span></span>' +
       "</button>";
 
     el.screen.innerHTML = html;
