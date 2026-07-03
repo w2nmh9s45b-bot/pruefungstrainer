@@ -1,6 +1,6 @@
 # Prüfungstrainer (PWA)
 
-Interaktive Prüfungsschemata für das Verwaltungsstudium (HöV RLP) als Progressive Web App fürs iPhone. Die Startseite zeigt **Fach-Ordner** („Baurecht“ und „Kommunalrecht“); darin liegen die Schemata zum Durchklicken – jeder Prüfungsschritt baut auf den vorherigen Antworten auf, mit Zurück-Funktion, Verlauf und kopierbarem Prüfungsweg. Im Fach Kommunalrecht sind die Schemata nach **Fachstudienjahren (FS 1–3)** gruppiert; Schemata, die in mehreren Jahren gebraucht werden, erscheinen in jeder betreffenden Gruppe.
+Interaktive Prüfungsschemata für das Verwaltungsstudium (HöV RLP) als Progressive Web App fürs iPhone. Die Startseite zeigt **Modul-Ordner** (Modul 2 „Rechtliche Grundlagen", Modul 5 „Besonderes Verwaltungsrecht"); darin liegen die **Fächer** (Modul 2: Privatrecht, Staatsrecht/Europarecht · Modul 5: Baurecht, Kommunalrecht) und in diesen die Schemata zum Durchklicken – jeder Prüfungsschritt baut auf den vorherigen Antworten auf, mit Zurück-Funktion, Verlauf und kopierbarem Prüfungsweg. In den meisten Fächern sind die Schemata nach **Fachstudienjahren (FS 1–3)** gruppiert; Schemata, die in mehreren Jahren gebraucht werden, erscheinen in jeder betreffenden Gruppe.
 
 ## Schemata im Ordner Baurecht
 
@@ -37,6 +37,14 @@ Inhaltliche Quellen: Obsidian-Vault „Brain“, `Studium/Studium 1-3 (MD)/Modul
 
 Inhaltliche Quellen: Obsidian-Vault „Brain“, `Studium/Studium 1-3 (MD)/Modul 5/Kommunalrecht/` (Schema Rechtmäßigkeitsprüfung Meudt 09/2025, Schema § 22 GemO, Schema Wahl eines Beigeordneten, FS-II-Skripte 01–09 Minor, FS-III-Foliensätze Böhle/Schäfer, Lehrpläne FS I–III) sowie die Gesetzes-Volltexte `Gesetze/md/Kommunalrecht/GemO_RP.md` und `KomWG_RP.md`.
 
+## Schemata im Ordner Staatsrecht / Europarecht (Modul 2, nach Fachstudienjahren)
+
+**Fachstudium 1 (9):** Prüfung eines Freiheitsgrundrechts (Grundschema, *auch FS 2*), Gleichheitsgrundrechte (Art. 3 GG), Menschenwürde und Leben (Art. 1 I / 2 II 1 GG), Allgemeines Persönlichkeitsrecht (Art. 2 I i. V. m. 1 I GG, Sphärentheorie), Versammlungsfreiheit (Art. 8 GG), Berufsfreiheit (Art. 12 GG, Dreistufentheorie), Verfassungsbeschwerde (§§ 90 ff. BVerfGG), Gesetzgebungskompetenz (Art. 70 ff. GG, *auch FS 2*), Gesetzgebungsverfahren (Art. 76 ff. GG, *auch FS 2*).
+
+**Fachstudium 2 (15):** die drei fs-übergreifenden aus FS 1 plus – Abgeordnete/freies Mandat und Indemnität/Immunität (Art. 38 I 2, 46 GG; Fraktionszwang/-disziplin), Wahlrechtsgrundsätze (Art. 38 I 1 GG), Bundesrat (Art. 50–53 GG), Bundesregierung (Art. 62–69 GG; Kanzlerwahl, Art. 67/68 GG), Bundespräsident (Art. 54–61, 82 GG; Prüfungsrecht), Verfassungsänderung und Art. 79 III GG (Staatsstrukturprinzipien), Bundesstaatsprinzip (Art. 20 I, 31, 28 GG), Rechtsstaatsprinzip (Art. 20 III GG), sowie Europarecht: EU-Rechtsquellen/Handlungsformen (Art. 288 AEUV), Richtlinie – unmittelbare Wirkung, Anwendungsvorrang des Unionsrechts (Solange/Identitäts-/Ultra-vires-Kontrolle), Grundfreiheiten (Art. 28 ff. AEUV).
+
+Inhaltliche Quellen: Obsidian-Vault „Brain“, `Studium/Studium 1-3 (MD)/Modul 2/Staats und Verfassungsrecht/` (FS-I-Skripte Weidenbach zu Grundrechten/Gesetzgebung, OLE Verfassungsbeschwerde Eckhardt, OLE Art. 8 GG Jagatic, FS-II-Gesamtskript Breitbach/Jagatic zum Staatsorganisationsrecht, OLE 11 Staatsstrukturprinzipien, OLE 16 Synopse GG/LV) und `…/Europarecht/` (FS-II-Skript Breitbach/Jagatic, OLE 3 Verhältnis zum nationalen Recht) sowie die Methodik aus Modul 1 (Gutachtenstil) und die Gesetzes-Volltexte `Gesetze/md/Verfassungsrecht/Grundgesetz.md`, `BVerfGG.md`, `EUV.md`, `AEUV.md` und `Sonstige…/BWahlG.md`.
+
 ## Aufs iPhone bringen
 
 Eine PWA braucht HTTPS. Der einfachste Weg ist kostenloses Hosting:
@@ -69,4 +77,6 @@ python3 -m http.server 8741
 - `app.js` – generische Engine: Fach-Ordner, Verzweigung, Verlauf, Zurück, Speichern (localStorage), Ergebnis-Zusammenfassung
 - `schema-baugenehmigung.js`, `schema-bauaufsicht.js`, `schema-nachbarschutz.js`, `schema-einschreiten.js`, `schema-bebauungsplan.js`, `schema-plansicherung.js` – Entscheidungsbäume Baurecht
 - `schema-komr-aufgaben.js`, `schema-komr-selbstverwaltung.js`, `schema-komr-kommunalaufsicht.js`, `schema-komr-satzung.js` (FS 1) · `schema-komr-organkompetenz.js`, `schema-komr-ratsbeschluss.js`, `schema-komr-mitwirkungsverbot.js` (FS 2) · `schema-komr-aussetzung.js`, `schema-komr-bmwahl.js`, `schema-komr-beigeordnete.js`, `schema-komr-wahlbeschwerde.js`, `schema-komr-kvs.js`, `schema-komr-einrichtungen.js`, `schema-komr-verpflichtungserklaerung.js` (FS 3) – Entscheidungsbäume Kommunalrecht
+- `schema-pr-*.js` – Entscheidungsbäume Privatrecht (Modul 2, FS 1/2)
+- `schema-sr-*.js` – Entscheidungsbäume Staatsrecht/Europarecht (Modul 2, FS 1/2): `schema-sr-freiheitsgrundrechte.js`, `-gleichheitsgrundrechte.js`, `-menschenwuerde.js`, `-apr.js`, `-versammlungsfreiheit.js`, `-berufsfreiheit.js`, `-verfassungsbeschwerde.js`, `-gesetzgebungskompetenz.js`, `-gesetzgebungsverfahren.js`, `-abgeordnete.js`, `-wahlrechtsgrundsaetze.js`, `-bundesrat.js`, `-regierung.js`, `-bundespraesident.js`, `-verfassungsaenderung.js`, `-bundesstaat.js`, `-rechtsstaat.js`, `-eur-rechtsquellen.js`, `-eur-richtlinie.js`, `-eur-vorrang.js`, `-eur-grundfreiheiten.js`
 - `manifest.webmanifest`, `sw.js`, `icons/` – PWA-Installierbarkeit und Offline-Betrieb
