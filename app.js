@@ -8,7 +8,7 @@
   var MODULE_META = {
     "Modul 2": {
       icon: "⚖️",
-      desc: "Rechtliche Grundlagen – Privatrechtliches Handeln der Verwaltung (BGB)"
+      desc: "Rechtliche Grundlagen – Privatrecht (BGB) und Staatsrecht/Europarecht (GG, EUV/AEUV)"
     },
     "Modul 5": {
       icon: "🏛️",
@@ -35,6 +35,11 @@
       module: "Modul 2",
       icon: "📜",
       desc: "BGB: Vertragslehre, Geschäftsfähigkeit, Stellvertretung, Fristen, Sachen-, Bereicherungs- und Deliktsrecht, Leistungsstörungen, Kaufrecht, Grundstücksrecht"
+    },
+    "Staatsrecht / Europarecht": {
+      module: "Modul 2",
+      icon: "🇩🇪",
+      desc: "Grundrechte, Verfassungsbeschwerde, Gesetzgebung, Staatsorganisation und Staatsstrukturprinzipien (GG, BVerfGG) sowie Europarecht: Rechtsquellen, Richtlinien, Anwendungsvorrang, Grundfreiheiten (EUV, AEUV)"
     }
   };
 
