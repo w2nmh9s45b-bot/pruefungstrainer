@@ -1,6 +1,8 @@
-# Deployment – Stand 02.07.2026
+# Deployment – Stand 03.07.2026
 
 **Status: LIVE.** Die App ist online unter **https://w2nmh9s45b-bot.github.io/pruefungstrainer/** (GitHub Pages, Branch `main`, Ordner `/root`, HTTPS erzwungen). Repo: https://github.com/w2nmh9s45b-bot/pruefungstrainer (public). Alle Dateien wurden per Drag & Drop hochgeladen und per SHA-256 gegen die lokalen Dateien verifiziert (byte-identisch).
+
+**Update 03.07.2026:** Neues Fach **Staatsrecht/Europarecht** (Modul 2, 21 Schemata, FS1/FS2) ergänzt; Service-Worker-Cache auf `pruefungstrainer-v5` erhöht. Hinweis: Der GitHub-Pages-Deploy-Schritt kann sporadisch mit „Deployment failed, try again later" abbrechen (transienter Infrastrukturfehler, Build ist ok); dann genügt ein erneuter Commit oder ein Re-run des Actions-Workflows, um den Deploy anzustoßen.
 
 **Update-Workflow für künftige Änderungen:** Lokal in `/Users/moritzschmidt/Brain/Apps/Pruefungstrainer` ändern, `git add -A && git commit -m "..."`, dann die geänderten Dateien erneut über die GitHub-Weboberfläche hochladen (Datei anklicken → Stift-Icon „Edit this file“ oder erneut per Drag & Drop auf `/upload/main`). Ohne Terminal-Zugriff auf `git push` (kein Token hinterlegt) bleibt der Weg über die Weboberfläche nötig, siehe „Weg B" unten.
 
