@@ -1,5 +1,5 @@
 /* Prüfungstrainer – Service Worker: App-Shell offline verfügbar machen */
-var CACHE = "pruefungstrainer-v7";
+var CACHE = "pruefungstrainer-v8";
 var ASSETS = [
   "./",
   "./index.html",
@@ -108,6 +108,23 @@ var ASSETS = [
   "./schema-atr-urlaubsuebertragung.js",
   "./schema-atr-zusatzurlaub.js",
   "./schema-atr-arbeitsbefreiung.js",
+  "./schema-besr-alimentation.js",
+  "./schema-besr-bestandteile.js",
+  "./schema-besr-anspruch.js",
+  "./schema-besr-teilmonat.js",
+  "./schema-besr-teilzeit.js",
+  "./schema-besr-fernbleiben.js",
+  "./schema-besr-rueckforderung.js",
+  "./schema-besr-besoldungsgruppe.js",
+  "./schema-besr-stufenbeginn.js",
+  "./schema-besr-stufenaufstieg.js",
+  "./schema-besr-befoerderung-stufe.js",
+  "./schema-besr-paz.js",
+  "./schema-besr-kbz.js",
+  "./schema-besr-sonderzuschlaege-fz.js",
+  "./schema-besr-zulagen.js",
+  "./schema-besr-ausgleichszulage.js",
+  "./schema-besr-anwaerterbezuege.js",
   "./manifest.webmanifest",
   "./icons/icon.svg",
   "./icons/icon-192.png",

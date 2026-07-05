@@ -23,7 +23,6 @@ window.SCHEMATA.push({
   stations: [
     { id: "anlass", label: "Anlass" },
     { id: "zuordnung", label: "Stufenzuordnung" },
-    { id: "wirkung", label: "Wirkung" },
     { id: "ergebnis", label: "Ergebnis" }
   ],
 

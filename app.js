@@ -16,7 +16,7 @@
     },
     "Modul 6": {
       icon: "👥",
-      desc: "Personal, Organisation, Kommunikation – Arbeits- und Tarifrecht (TVöD, TzBfG, EFZG, BUrlG)"
+      desc: "Personal, Organisation, Kommunikation – Arbeits- und Tarifrecht (TVöD, TzBfG, EFZG, BUrlG) und Besoldungsrecht (LBesG RP)"
     }
   };
   var MODULE_ORDER = ["Modul 2", "Modul 5", "Modul 6"];
@@ -54,6 +54,11 @@
       module: "Modul 6",
       icon: "🤝",
       desc: "Arbeitsrecht des öffentlichen Dienstes: Arbeitnehmerbegriff, Arbeitsvertrag, Befristung, Kündigung, Beschäftigungszeit, TVöD-Entgeltrecht (Eingruppierung, Stufen, Zulagen, Jahressonderzahlung), Krankheit und Urlaub – TVöD, TzBfG, EFZG, BUrlG, SGB IX"
+    },
+    "Besoldungsrecht": {
+      module: "Modul 6",
+      icon: "💶",
+      desc: "Besoldung der Beamten in RLP: Alimentationsprinzip, Bezügebestandteile, Besoldungsanspruch, Verlust und Rückforderung, Grundgehalt (Besoldungsgruppe und Stufen), Familienzuschlag, Zulagen und Anwärterbezüge – LBesG RP"
     }
   };
 

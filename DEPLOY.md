@@ -1,6 +1,10 @@
-# Deployment – Stand 03.07.2026
+# Deployment – Stand 05.07.2026
 
 **Status: LIVE.** Die App ist online unter **https://w2nmh9s45b-bot.github.io/pruefungstrainer/** (GitHub Pages, Branch `main`, Ordner `/root`, HTTPS erzwungen). Repo: https://github.com/w2nmh9s45b-bot/pruefungstrainer (public). Alle Dateien wurden per Drag & Drop hochgeladen und per SHA-256 gegen die lokalen Dateien verifiziert (byte-identisch).
+
+**Update 05.07.2026:** Neues Fach **Besoldungsrecht** (Modul 6, 17 Schemata, alle FS 3) ergänzt – damit 120 Schemata in 7 Fächern; Service-Worker-Cache auf `pruefungstrainer-v8` erhöht.
+
+**Update 03.07.2026 (abends):** Neues Fach **Arbeits- und Tarifrecht** (Modul 6, 24 Schemata, FS 3); Cache `pruefungstrainer-v7`.
 
 **Update 03.07.2026:** Neues Fach **Staatsrecht/Europarecht** (Modul 2, 21 Schemata, FS1/FS2) ergänzt; Service-Worker-Cache auf `pruefungstrainer-v5` erhöht. Hinweis: Der GitHub-Pages-Deploy-Schritt kann sporadisch mit „Deployment failed, try again later" abbrechen (transienter Infrastrukturfehler, Build ist ok); dann genügt ein erneuter Commit oder ein Re-run des Actions-Workflows, um den Deploy anzustoßen.
 

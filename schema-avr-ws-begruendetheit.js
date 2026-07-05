@@ -28,7 +28,6 @@ window.SCHEMATA.push({
     { id: "rw", label: "Rechtmäßigkeit" },
     { id: "verletzung", label: "Rechtsverletzung" },
     { id: "zweck", label: "Zweckmäßigkeit" },
-    { id: "tenor", label: "Tenor & Kosten" },
     { id: "ergebnis", label: "Ergebnis" }
   ],
 
