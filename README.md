@@ -1,6 +1,6 @@
 # Prüfungstrainer (PWA)
 
-Interaktive Prüfungsschemata für das Verwaltungsstudium (HöV RLP) als Progressive Web App fürs iPhone. Die Startseite zeigt **Modul-Ordner** (Modul 2 „Rechtliche Grundlagen", Modul 5 „Besonderes Verwaltungsrecht", Modul 6 „Personal, Organisation, Kommunikation"); darin liegen die **Fächer** (Modul 2: Allgemeines Verwaltungsrecht, Privatrecht, Staatsrecht/Europarecht · Modul 5: Baurecht, Kommunalrecht · Modul 6: Arbeits- und Tarifrecht, Besoldungsrecht) und in diesen die Schemata zum Durchklicken – jeder Prüfungsschritt baut auf den vorherigen Antworten auf, mit Zurück-Funktion, Verlauf und kopierbarem Prüfungsweg. In den meisten Fächern sind die Schemata nach **Fachstudienjahren (FS 1–3)** gruppiert; Schemata, die in mehreren Jahren gebraucht werden, erscheinen in jeder betreffenden Gruppe.
+Interaktive Prüfungsschemata für das Verwaltungsstudium (HöV RLP) als Progressive Web App fürs iPhone. Die Startseite zeigt **Modul-Ordner** (Modul 2 „Rechtliche Grundlagen", Modul 5 „Besonderes Verwaltungsrecht", Modul 6 „Personal, Organisation, Kommunikation"); darin liegen die **Fächer** (Modul 2: Allgemeines Verwaltungsrecht, Privatrecht, Staatsrecht/Europarecht · Modul 5: Baurecht, Kommunalrecht · Modul 6: Arbeits- und Tarifrecht, Beamtenrecht, Besoldungsrecht) und in diesen die Schemata zum Durchklicken – jeder Prüfungsschritt baut auf den vorherigen Antworten auf, mit Zurück-Funktion, Verlauf und kopierbarem Prüfungsweg. In den meisten Fächern sind die Schemata nach **Fachstudienjahren (FS 1–3)** gruppiert; Schemata, die in mehreren Jahren gebraucht werden, erscheinen in jeder betreffenden Gruppe.
 
 ## Schemata im Ordner Baurecht
 
@@ -73,6 +73,21 @@ Inhaltliche Quellen: Obsidian-Vault „Brain", `Studium/Studium 1-3 (MD)/Modul 6
 
 Inhaltliche Quellen: Obsidian-Vault „Brain", `Studium/Studium 1-3 (MD)/Modul 6/Besoldungsrecht/Fachstudium 3/Skripte/Besoldungsrecht FSIII-V 2025_2026.md` (Gesamtskript Hartmann/Schmorleiz, inkl. Übungen 1–17) sowie die Gesetzes-Volltexte `Gesetze/md/Beamten und Dienstrecht/BesG_RP_2013.md` (LBesG), `BeamtStG.md`, `LBG_RP_2010.md` und `…/Kommunalrecht/{LHO_RP,GemHV_RP_2006}.md`. Alle Normzitate wurden am LBesG-Volltext verifiziert; zwei Skript-Ungenauigkeiten korrigiert (Geringfügigkeitsgrenze in § 41a: SGB IV statt SGB VI; 25-%-Abschmelzung beim Dienstherrnwechsel: § 52 I 3 statt § 51 I 3).
 
+## Schemata im Ordner Beamtenrecht (Modul 6, FS 2)
+
+**21 Schemata (alle FS 2), gegliedert nach Bereichen:**
+
+- **Grundlagen und Laufbahn (3):** Arten des Beamtenverhältnisses und Probezeit (§ 4 BeamtStG, § 20 LBG) · Zugang zur Laufbahn (§§ 15, 18 LBG, § 18 LbVO) · Beförderung und Qualifizierung (§ 21 LBG)
+- **Ernennung (3):** Rechtsnatur und Ernennungsfälle (§ 8 I BeamtStG) · Ernennungsvoraussetzungen (formell/materiell, §§ 7 ff. BeamtStG) · Ernennungsurkunde und zeitliche Wirksamkeit (§ 8 II, IV BeamtStG, § 10 II LBG)
+- **Fehlerhafte Ernennung (3):** Fehlerfolgen-Überblick (Nullum/nichtig/rücknehmbar/wirksam) · Nichtigkeit (§ 11 BeamtStG mit Heilung) · Rücknahme (§ 12 BeamtStG, Fristen § 13 LBG)
+- **Beendigung (4):** Beendigungsgründe-Überblick (§ 21 BeamtStG, § 24 Verlust der Beamtenrechte) · Entlassung kraft Gesetzes (§ 22 BeamtStG, § 30 IV LBG) · Entlassung durch VA (§ 23 BeamtStG, Fristen §§ 31, 32 LBG) · Ruhestand (§§ 25–28 BeamtStG, §§ 37–39 LBG)
+- **Pflichten und Rechte (3):** Beamtenpflichten (§§ 33 ff. BeamtStG: Treue, Neutralität/Mäßigung/Verfassungstreue, Wohlverhalten, Verschwiegenheit, Diensteid, Annahmeverbot) · Remonstration (§ 36 BeamtStG) · Rechte (Fürsorge § 45, Urlaub UrlVO, Personalakte, Beurteilung)
+- **Pflichtverletzung und Disziplinarrecht (2):** Dienstvergehen (§ 47 BeamtStG mit inner-/außerdienstlicher Abgrenzung, Schadensersatz § 48) · Disziplinarverfahren (LDG: Legalitäts-/Opportunitätsprinzip, Maßnahmenkatalog, vorläufige Dienstenthebung § 45 LDG, VG Trier)
+- **Nebentätigkeit (1):** Genehmigungspflicht und -fähigkeit (§ 83 LBG, § 84 LBG, NebVO, 8-Stunden-Regel, 40-%-Grenze, Ablieferungspflicht)
+- **Personalverteilung und Rechtsschutz (2):** Versetzung–Abordnung–Umsetzung–Zuweisung (§§ 14, 15, 20 BeamtStG, §§ 28, 29 LBG) · Rechtsschutz (§ 54 BeamtStG: Vorverfahren vor allen Klagen, Grund-/Betriebsverhältnis, beamtenrechtlicher Widerspruch, § 80 V/§ 123 VwGO)
+
+Inhaltliche Quellen: Obsidian-Vault „Brain", `Studium/Studium 1-3 (MD)/Modul 6/Beamtenrecht/Fachstudium 2/` (PP-Skripte Laufbahnrecht/Ernennungsrecht/Beendigung/Pflichten/Rechte von M. Minor, OLE-Skripte „Folgen mangelnder Pflichterfüllung" und „Personalverteilungsmaßnahmen" (Wagner), Block 8 Nebentätigkeitsrecht, Rechtsschutz-Skript, die beiden Vault-Prüfungsschemata „Nichtigkeit/Rücknahme einer Ernennung" sowie der Lehrplan FS II 2024/2025) und die Gesetzes-Volltexte `Gesetze/md/Beamten und Dienstrecht/{BeamtStG,LBG_RP_2010,LbV_RP_2010,NTV_RP,DG_RP}.md`. Alle Normzitate wurden an den Volltexten verifiziert (u. a. § 85 I 2 LBG: NT-Genehmigung erlischt beim Wechsel der Dienststelle, nicht erst des Dienstherrn).
+
 ## Aufs iPhone bringen
 
 Eine PWA braucht HTTPS. Der einfachste Weg ist kostenloses Hosting:
@@ -109,5 +124,6 @@ python3 -m http.server 8741
 - `schema-pr-*.js` – Entscheidungsbäume Privatrecht (Modul 2, FS 1/2)
 - `schema-atr-*.js` – Entscheidungsbäume Arbeits- und Tarifrecht (Modul 6, FS 3, 24 Dateien)
 - `schema-besr-*.js` – Entscheidungsbäume Besoldungsrecht (Modul 6, FS 3): `schema-besr-alimentation.js`, `-bestandteile.js`, `-anspruch.js`, `-teilmonat.js`, `-teilzeit.js`, `-fernbleiben.js`, `-rueckforderung.js`, `-besoldungsgruppe.js`, `-stufenbeginn.js`, `-stufenaufstieg.js`, `-befoerderung-stufe.js`, `-paz.js`, `-kbz.js`, `-sonderzuschlaege-fz.js`, `-zulagen.js`, `-ausgleichszulage.js`, `-anwaerterbezuege.js`
+- `schema-br-*.js` – Entscheidungsbäume Beamtenrecht (Modul 6, FS 2, 21 Dateien): `-beamtenverhaeltnis`, `-laufbahnbewerber`, `-befoerderung`, `-ernennungsfaelle`, `-ernennung-voraussetzungen`, `-ernennungsurkunde`, `-fehlerfolgen-ernennung`, `-nichtigkeit`, `-ruecknahme`, `-beendigung`, `-entlassung-gesetz`, `-entlassung-va`, `-ruhestand`, `-pflichten`, `-remonstration`, `-rechte`, `-dienstvergehen`, `-disziplinarverfahren`, `-nebentaetigkeit`, `-personalverteilung`, `-rechtsschutz`
 - `schema-sr-*.js` – Entscheidungsbäume Staatsrecht/Europarecht (Modul 2, FS 1/2): `schema-sr-freiheitsgrundrechte.js`, `-gleichheitsgrundrechte.js`, `-menschenwuerde.js`, `-apr.js`, `-versammlungsfreiheit.js`, `-berufsfreiheit.js`, `-verfassungsbeschwerde.js`, `-gesetzgebungskompetenz.js`, `-gesetzgebungsverfahren.js`, `-abgeordnete.js`, `-wahlrechtsgrundsaetze.js`, `-bundesrat.js`, `-regierung.js`, `-bundespraesident.js`, `-verfassungsaenderung.js`, `-bundesstaat.js`, `-rechtsstaat.js`, `-eur-rechtsquellen.js`, `-eur-richtlinie.js`, `-eur-vorrang.js`, `-eur-grundfreiheiten.js`
 - `manifest.webmanifest`, `sw.js`, `icons/` – PWA-Installierbarkeit und Offline-Betrieb

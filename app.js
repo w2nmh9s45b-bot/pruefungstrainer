@@ -16,7 +16,7 @@
     },
     "Modul 6": {
       icon: "👥",
-      desc: "Personal, Organisation, Kommunikation – Arbeits- und Tarifrecht (TVöD, TzBfG, EFZG, BUrlG) und Besoldungsrecht (LBesG RP)"
+      desc: "Personal, Organisation, Kommunikation – Arbeits- und Tarifrecht (TVöD, TzBfG, EFZG, BUrlG), Beamtenrecht (BeamtStG, LBG) und Besoldungsrecht (LBesG RP)"
     }
   };
   var MODULE_ORDER = ["Modul 2", "Modul 5", "Modul 6"];
@@ -54,6 +54,11 @@
       module: "Modul 6",
       icon: "🤝",
       desc: "Arbeitsrecht des öffentlichen Dienstes: Arbeitnehmerbegriff, Arbeitsvertrag, Befristung, Kündigung, Beschäftigungszeit, TVöD-Entgeltrecht (Eingruppierung, Stufen, Zulagen, Jahressonderzahlung), Krankheit und Urlaub – TVöD, TzBfG, EFZG, BUrlG, SGB IX"
+    },
+    "Beamtenrecht": {
+      module: "Modul 6",
+      icon: "🎖️",
+      desc: "Statusrecht der Beamten: Beamtenverhältnis und Laufbahn, Ernennung (Voraussetzungen, Urkunde, Fehlerfolgen mit Nichtigkeit und Rücknahme), Beendigung, Pflichten und Rechte, Dienstvergehen und Disziplinarrecht, Nebentätigkeiten, Personalverteilung und Rechtsschutz – BeamtStG, LBG, LbVO, NebVO, LDG"
     },
     "Besoldungsrecht": {
       module: "Modul 6",

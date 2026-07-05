@@ -2,6 +2,8 @@
 
 **Status: LIVE.** Die App ist online unter **https://w2nmh9s45b-bot.github.io/pruefungstrainer/** (GitHub Pages, Branch `main`, Ordner `/root`, HTTPS erzwungen). Repo: https://github.com/w2nmh9s45b-bot/pruefungstrainer (public). Alle Dateien wurden per Drag & Drop hochgeladen und per SHA-256 gegen die lokalen Dateien verifiziert (byte-identisch).
 
+**Update 05.07.2026 (2):** Neues Fach **Beamtenrecht** (Modul 6, 21 Schemata, alle FS 2) ergänzt – damit 141 Schemata in 8 Fächern; Service-Worker-Cache auf `pruefungstrainer-v9` erhöht.
+
 **Update 05.07.2026:** Neues Fach **Besoldungsrecht** (Modul 6, 17 Schemata, alle FS 3) ergänzt – damit 120 Schemata in 7 Fächern; Service-Worker-Cache auf `pruefungstrainer-v8` erhöht.
 
 **Update 03.07.2026 (abends):** Neues Fach **Arbeits- und Tarifrecht** (Modul 6, 24 Schemata, FS 3); Cache `pruefungstrainer-v7`.
