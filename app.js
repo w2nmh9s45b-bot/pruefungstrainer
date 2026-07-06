@@ -20,7 +20,7 @@
     },
     "Modul 6": {
       icon: "👥",
-      desc: "Personal, Organisation, Kommunikation – Arbeits- und Tarifrecht (TVöD, TzBfG, EFZG, BUrlG), Beamtenrecht (BeamtStG, LBG) und Besoldungsrecht (LBesG RP)"
+      desc: "Personal, Organisation, Kommunikation – Arbeits- und Tarifrecht (TVöD, TzBfG, EFZG, BUrlG), Beamtenrecht (BeamtStG, LBG), Besoldungsrecht (LBesG RP) und IK: Interaktion und Kommunikation (Wahrnehmung, Kommunikationsmodelle, Konflikte, Motivation, Führung, Moderation, IKK)"
     }
   };
   var MODULE_ORDER = ["Modul 2", "Modul 3", "Modul 5", "Modul 6"];
@@ -78,6 +78,11 @@
       module: "Modul 6",
       icon: "💶",
       desc: "Besoldung der Beamten in RLP: Alimentationsprinzip, Bezügebestandteile, Besoldungsanspruch, Verlust und Rückforderung, Grundgehalt (Besoldungsgruppe und Stufen), Familienzuschlag, Zulagen und Anwärterbezüge – LBesG RP"
+    },
+    "Interaktion und Kommunikation": {
+      module: "Modul 6",
+      icon: "💬",
+      desc: "IK über alle drei Studienjahre: Soziale Wahrnehmung und Beurteilungsfehler, Watzlawick und Schulz von Thun (mit Nachrichten-Analysator), aktives Zuhören, verständliche Verwaltungssprache, Konflikte (Glasl-Simulator) und Mobbing, Gesprächsführung und Feedback, Motivation (Rubikon/WOOP), Führung und Team, Moderation und interkulturelle Kommunikation – ohne Paragrafen, mit Trainern, Reglern und Glossar"
     }
   };
 

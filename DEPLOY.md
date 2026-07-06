@@ -1,5 +1,7 @@
 # Deployment – Stand 06.07.2026
 
+**Update 06.07.2026 (3):** Viertes Modul-6-Fach **IK – Interaktion und Kommunikation** (21 Einträge: 20 Schemata FS 1–3 + Glossar mit 70 Begriffen; bündelt „Psychologische Aspekte der Kommunikation" und „Soziale Kompetenzen am Arbeitsplatz I/II"; 5 interaktive Trainer: Nachrichten-Analysator, Verständlichkeits-Regler, Glasl-Eskalationstreppe, Rubikon/WOOP, Teamphasen) – damit 208 Schemata in 11 Fächern; Service-Worker-Cache auf `pruefungstrainer-v12` erhöht.
+
 **Status: LIVE.** Die App ist online unter **https://w2nmh9s45b-bot.github.io/pruefungstrainer/** (GitHub Pages, Branch `main`, Ordner `/root`, HTTPS erzwungen). Repo: https://github.com/w2nmh9s45b-bot/pruefungstrainer (public). Alle Dateien wurden per Drag & Drop hochgeladen und per SHA-256 gegen die lokalen Dateien verifiziert (byte-identisch).
 
 **Update 06.07.2026 (2):** Zweites Modul-3-Fach **Internes Rechnungswesen** (18 Einträge: 17 Schemata FS 2 + Glossar mit 91 Begriffen; 7 Rechner/Simulatoren mit den Original-Skript-Beispielen, u. a. BAB/ILV mit Anbau- und Stufenleiterverfahren) – damit 187 Schemata in 10 Fächern; Service-Worker-Cache auf `pruefungstrainer-v11` erhöht.
