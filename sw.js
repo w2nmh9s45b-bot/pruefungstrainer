@@ -1,5 +1,5 @@
 /* Prüfungstrainer – Service Worker: App-Shell offline verfügbar machen */
-var CACHE = "pruefungstrainer-v12";
+var CACHE = "pruefungstrainer-v13";
 var ASSETS = [
   "./",
   "./index.html",
@@ -93,6 +93,21 @@ var ASSETS = [
   "./schema-ik-moderation.js",
   "./schema-ik-ikk.js",
   "./schema-ik-glossar.js",
+  "./schema-opw-ziele.js",
+  "./schema-opw-objekte.js",
+  "./schema-opw-stelle.js",
+  "./schema-opw-leitungsspanne.js",
+  "./schema-opw-funktionsbereiche.js",
+  "./schema-opw-leitungssysteme.js",
+  "./schema-opw-erweiterung.js",
+  "./schema-opw-orgaplaene.js",
+  "./schema-opw-buerokratiemodell.js",
+  "./schema-opw-nsm.js",
+  "./schema-opw-stellenbeschreibung.js",
+  "./schema-opw-stellenbemessung.js",
+  "./schema-opw-stellenbewertung.js",
+  "./schema-opw-arbeitsplatzkosten.js",
+  "./schema-opw-glossar.js",
   "./schema-baugenehmigung.js",
   "./schema-bauaufsicht.js",
   "./schema-nachbarschutz.js",

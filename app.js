@@ -20,7 +20,7 @@
     },
     "Modul 6": {
       icon: "👥",
-      desc: "Personal, Organisation, Kommunikation – Arbeits- und Tarifrecht (TVöD, TzBfG, EFZG, BUrlG), Beamtenrecht (BeamtStG, LBG), Besoldungsrecht (LBesG RP) und IK: Interaktion und Kommunikation (Wahrnehmung, Kommunikationsmodelle, Konflikte, Motivation, Führung, Moderation, IKK)"
+      desc: "Personal, Organisation, Kommunikation – Arbeits- und Tarifrecht (TVöD, TzBfG, EFZG, BUrlG), Beamtenrecht (BeamtStG, LBG), Besoldungsrecht (LBesG RP), IK: Interaktion und Kommunikation sowie OPW: Organisationsmanagement und Personalwirtschaft (Aufbauorganisation, Leitungssysteme, NSM, Stellenwirtschaft)"
     }
   };
   var MODULE_ORDER = ["Modul 2", "Modul 3", "Modul 5", "Modul 6"];
@@ -78,6 +78,11 @@
       module: "Modul 6",
       icon: "💶",
       desc: "Besoldung der Beamten in RLP: Alimentationsprinzip, Bezügebestandteile, Besoldungsanspruch, Verlust und Rückforderung, Grundgehalt (Besoldungsgruppe und Stufen), Familienzuschlag, Zulagen und Anwärterbezüge – LBesG RP"
+    },
+    "Organisationsmanagement und Personalwirtschaft": {
+      module: "Modul 6",
+      icon: "🧩",
+      desc: "Die Theorie der Organisationsarbeit – Ziele (SMART), Aufbau- und Ablauforganisation, Stelle und Leitungsspanne (mit Hierarchie-Simulator), Leitungssysteme, Erweiterung der Linienorganisation, Organisationspläne, Bürokratiemodell und Neues Steuerungsmodell sowie die Stellenwirtschaft: Stellenbeschreibung, Personalbedarfs-Rechner, Stellenbewertung und KGSt-Arbeitsplatzkosten – das Fach zur Stelle SB Organisation",
     },
     "Interaktion und Kommunikation": {
       module: "Modul 6",

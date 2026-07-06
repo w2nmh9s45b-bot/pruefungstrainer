@@ -1,5 +1,7 @@
 # Deployment – Stand 06.07.2026
 
+**Update 06.07.2026 (4):** Fünftes Modul-6-Fach **OPW – Organisationsmanagement und Personalwirtschaft** (15 Einträge: 14 Schemata FS 1 + Glossar mit 43 Begriffen; 3 KGSt-Rechner: Leitungsspannen-Simulator, Personalbedarfs-Rechner, Arbeitsplatzkosten-Rechner) – damit 223 Schemata in 12 Fächern; Service-Worker-Cache auf `pruefungstrainer-v13` erhöht.
+
 **Update 06.07.2026 (3):** Viertes Modul-6-Fach **IK – Interaktion und Kommunikation** (21 Einträge: 20 Schemata FS 1–3 + Glossar mit 70 Begriffen; bündelt „Psychologische Aspekte der Kommunikation" und „Soziale Kompetenzen am Arbeitsplatz I/II"; 5 interaktive Trainer: Nachrichten-Analysator, Verständlichkeits-Regler, Glasl-Eskalationstreppe, Rubikon/WOOP, Teamphasen) – damit 208 Schemata in 11 Fächern; Service-Worker-Cache auf `pruefungstrainer-v12` erhöht.
 
 **Status: LIVE.** Die App ist online unter **https://w2nmh9s45b-bot.github.io/pruefungstrainer/** (GitHub Pages, Branch `main`, Ordner `/root`, HTTPS erzwungen). Repo: https://github.com/w2nmh9s45b-bot/pruefungstrainer (public). Alle Dateien wurden per Drag & Drop hochgeladen und per SHA-256 gegen die lokalen Dateien verifiziert (byte-identisch).
