@@ -70,6 +70,17 @@ for (const s of schemata) {
   const pre = `[${s.id}]`;
   if (!s.subject) err(`${pre} subject fehlt`);
   if (!s.title) err(`${pre} title fehlt`);
+
+  // Glossare (type "glossar") sind keine Entscheidungsbäume: nur Begriffsliste prüfen
+  if (s.type === "glossar") {
+    if (!Array.isArray(s.terms) || !s.terms.length) { err(`${pre} Glossar ohne terms`); continue; }
+    s.terms.forEach((t, i) => {
+      if (!t.t) err(`${pre} term ${i}: Begriff (t) fehlt`);
+      if (!t.d) err(`${pre} term ${i}: Definition (d) fehlt`);
+    });
+    continue;
+  }
+
   if (!s.nodes || !s.nodes[s.start]) { err(`${pre} start-Knoten "${s.start}" fehlt`); continue; }
   if (s.fs && !Array.isArray(s.fs)) err(`${pre} fs muss Array sein`);
   (s.fs || []).forEach((f) => { if (!["FS1","FS2","FS3"].includes(f)) err(`${pre} unbekanntes fs "${f}"`); });

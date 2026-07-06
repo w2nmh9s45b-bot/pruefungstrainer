@@ -10,6 +10,10 @@
       icon: "⚖️",
       desc: "Rechtliche Grundlagen – Allgemeines Verwaltungsrecht (VwVfG, VwGO), Privatrecht (BGB) und Staatsrecht/Europarecht (GG, EUV/AEUV)"
     },
+    "Modul 3": {
+      icon: "📈",
+      desc: "Wirtschaft – Volkswirtschaftslehre (Markt und Preis, Wettbewerb, Konjunktur, Inflation, VGR); Platz für Internes Rechnungswesen"
+    },
     "Modul 5": {
       icon: "🏛️",
       desc: "Besonderes Verwaltungsrecht – Baurecht und Kommunalrecht"
@@ -19,7 +23,7 @@
       desc: "Personal, Organisation, Kommunikation – Arbeits- und Tarifrecht (TVöD, TzBfG, EFZG, BUrlG), Beamtenrecht (BeamtStG, LBG) und Besoldungsrecht (LBesG RP)"
     }
   };
-  var MODULE_ORDER = ["Modul 2", "Modul 5", "Modul 6"];
+  var MODULE_ORDER = ["Modul 2", "Modul 3", "Modul 5", "Modul 6"];
 
   /* Optionale Metadaten je Fach (Ordner). Neue Fächer entstehen automatisch,
      sobald ein Schema mit neuem subject registriert wird; module ordnet das
@@ -49,6 +53,11 @@
       module: "Modul 2",
       icon: "🇩🇪",
       desc: "Grundrechte, Verfassungsbeschwerde, Gesetzgebung, Staatsorganisation und Staatsstrukturprinzipien (GG, BVerfGG) sowie Europarecht: Rechtsquellen, Richtlinien, Anwendungsvorrang, Grundfreiheiten (EUV, AEUV)"
+    },
+    "Volkswirtschaftslehre": {
+      module: "Modul 3",
+      icon: "📈",
+      desc: "Mikro- und Makroökonomie ohne Gutachtenstil: Diagnose-Bäume, interaktive Rechner und Schieberegler zu Gütern und Bedürfnissen, Markt und Preisbildung, Elastizitäten, Wettbewerb (GWB), Arbeitsmarkt, Konjunktur, magischem Viereck (§ 1 StWG), Inflation/VPI, Geld und VGR – plus Glossar mit allen Definitionen"
     },
     "Arbeits- und Tarifrecht": {
       module: "Modul 6",
@@ -95,6 +104,8 @@
   /* aktuell geöffneter Modul-/Fach-Ordner (nur Navigation, nicht persistiert) */
   var currentModule = null;
   var currentSubject = null;
+  /* geöffnetes Glossar (type "glossar", z. B. VWL-Definitionen) */
+  var openGlossarId = null;
 
   function save() {
     try {
@@ -108,7 +119,7 @@
       var raw = localStorage.getItem(STORAGE_KEY);
       if (!raw) return null;
       var s = JSON.parse(raw);
-      if (s && getSchema(s.schemaId) && getSchema(s.schemaId).nodes[s.nodeId]) return s;
+      if (s && getSchema(s.schemaId) && getSchema(s.schemaId).nodes && getSchema(s.schemaId).nodes[s.nodeId]) return s;
     } catch (e) { }
     return null;
   }
@@ -174,6 +185,7 @@
     state = null;
     currentModule = null;
     currentSubject = null;
+    openGlossarId = null;
     el.title.textContent = "Prüfungstrainer";
     el.stations.innerHTML = "";
     el.btnBack.disabled = true;
@@ -205,7 +217,7 @@
     html += '<button class="folder-card disabled" disabled>' +
       '<span class="fc-icon">＋</span>' +
       '<span class="fc-body"><span class="fc-name">Weitere Module</span>' +
-      '<span class="fc-count">Hier ist Platz für künftige Module und Fächer (z. B. Modul 1, 3 und 4).</span></span>' +
+      '<span class="fc-count">Hier ist Platz für künftige Module und Fächer (z. B. Modul 1 und 4).</span></span>' +
       "</button>";
 
     el.screen.innerHTML = html;
@@ -223,6 +235,7 @@
     state = null;
     currentModule = mod;
     currentSubject = null;
+    openGlossarId = null;
     el.title.textContent = mod;
     el.stations.innerHTML = "";
     el.btnBack.disabled = false;
@@ -265,6 +278,7 @@
     state = null;
     currentModule = moduleOf(subject);
     currentSubject = subject;
+    openGlossarId = null;
     el.title.textContent = subject;
     el.stations.innerHTML = "";
     el.btnBack.disabled = false;
@@ -294,7 +308,19 @@
         "</button>";
     }
 
-    var list = schemataOf(subject);
+    var all = schemataOf(subject);
+
+    /* Glossare (type "glossar") als eigene Rubrik oben – Nachschlagewerk statt Prüfung */
+    all.filter(function (s) { return s.type === "glossar"; }).forEach(function (g) {
+      html += '<button class="schema-card glossar-card" data-glossar="' + g.id + '">' +
+        '<div class="sc-area">' + esc(g.area || "Nachschlagen") + "</div>" +
+        "<h2>" + esc(g.title) + "</h2>" +
+        "<p>" + esc(g.description) + "</p>" +
+        '<span class="sc-fs">' + g.terms.length + " Begriffe</span>" +
+        "</button>";
+    });
+
+    var list = all.filter(function (s) { return s.type !== "glossar"; });
     var grouped = list.some(function (s) { return s.fs && s.fs.length; });
 
     if (grouped) {
@@ -325,6 +351,68 @@
         } else {
           startSchema(id);
         }
+      });
+    });
+    el.screen.querySelectorAll(".schema-card[data-glossar]").forEach(function (card) {
+      card.addEventListener("click", function () {
+        renderGlossar(getSchema(card.getAttribute("data-glossar")));
+      });
+    });
+    window.scrollTo(0, 0);
+  }
+
+  /* ---------------- Glossar-Ansicht (Definitionen-Rubrik) ---------------- */
+
+  function renderGlossar(schema) {
+    state = null;
+    currentModule = moduleOf(schema.subject);
+    currentSubject = schema.subject;
+    openGlossarId = schema.id;
+    el.title.textContent = schema.title;
+    el.stations.innerHTML = "";
+    el.btnBack.disabled = false;
+
+    var cats = [], byCat = {};
+    schema.terms.forEach(function (t) {
+      var c = t.cat || "Allgemein";
+      if (!byCat[c]) { byCat[c] = []; cats.push(c); }
+      byCat[c].push(t);
+    });
+
+    var html = '<div class="subject-head">' +
+      '<span class="sh-icon">📖</span>' +
+      "<div><h1>" + esc(schema.title) + "</h1>" +
+      "<p>" + esc(schema.description) + "</p></div></div>";
+    html += '<input type="search" id="g-search" class="g-search" placeholder="Begriff oder Stichwort suchen … (' + schema.terms.length + ' Einträge)" autocomplete="off">';
+
+    cats.forEach(function (c) {
+      html += '<div class="fs-group g-cat">' + esc(c) + "<span>" + byCat[c].length + " Begriffe</span></div>";
+      byCat[c].forEach(function (t) {
+        html += '<details class="g-term" data-term="' + esc(String(t.t).toLowerCase()) + '">' +
+          "<summary>" + esc(t.t) + "</summary>" +
+          '<div class="g-def">' + esc(t.d) + "</div></details>";
+      });
+    });
+
+    el.screen.innerHTML = html;
+    var search = document.getElementById("g-search");
+    search.addEventListener("input", function () {
+      var q = search.value.trim().toLowerCase();
+      el.screen.querySelectorAll(".g-term").forEach(function (d) {
+        var hit = !q ||
+          d.getAttribute("data-term").indexOf(q) !== -1 ||
+          d.querySelector(".g-def").textContent.toLowerCase().indexOf(q) !== -1;
+        d.style.display = hit ? "" : "none";
+        if (q && hit) d.setAttribute("open", "open");
+        else if (!q) d.removeAttribute("open");
+      });
+      el.screen.querySelectorAll(".g-cat").forEach(function (h) {
+        var any = false, n = h.nextElementSibling;
+        while (n && n.classList && n.classList.contains("g-term")) {
+          if (n.style.display !== "none") { any = true; break; }
+          n = n.nextElementSibling;
+        }
+        h.style.display = any ? "" : "none";
       });
     });
     window.scrollTo(0, 0);
@@ -377,6 +465,7 @@
     h += "<h1>" + esc(node.title) + "</h1>";
     if (node.text) h += '<div class="lawtext">' + esc(node.text) + "</div>";
     if (node.def) h += '<div class="def">' + node.def + "</div>";
+    if (node.tool) h += node.tool; /* rohes HTML für interaktive Tools (Slider, Rechner) */
     if (node.hint) h += '<div class="hint">' + esc(node.hint) + "</div>";
     h += "</div>";
     return h;
@@ -398,6 +487,11 @@
         choose(schema, node, parseInt(btn.getAttribute("data-opt"), 10));
       });
     });
+
+    /* Interaktive Knoten (VWL-Tools): Regler/Eingaben nach dem Rendern verdrahten */
+    if (typeof node.setup === "function") {
+      try { node.setup(el.screen, state.flags); } catch (e) { /* Tool-Fehler nie fatal */ }
+    }
   }
 
   function choose(schema, node, optIndex) {
@@ -426,6 +520,12 @@
   }
 
   function goBack() {
+    if (!state && openGlossarId) {
+      var g = getSchema(openGlossarId);
+      openGlossarId = null;
+      renderSubject(g ? g.subject : currentSubject);
+      return;
+    }
     if (state) {
       if (state.history.length === 0) return;
       var prev = state.history.pop();

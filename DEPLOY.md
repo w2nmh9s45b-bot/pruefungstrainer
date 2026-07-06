@@ -1,6 +1,8 @@
-# Deployment – Stand 05.07.2026
+# Deployment – Stand 06.07.2026
 
 **Status: LIVE.** Die App ist online unter **https://w2nmh9s45b-bot.github.io/pruefungstrainer/** (GitHub Pages, Branch `main`, Ordner `/root`, HTTPS erzwungen). Repo: https://github.com/w2nmh9s45b-bot/pruefungstrainer (public). Alle Dateien wurden per Drag & Drop hochgeladen und per SHA-256 gegen die lokalen Dateien verifiziert (byte-identisch).
+
+**Update 06.07.2026:** Neues Modul **3 „Wirtschaft"** mit dem Fach **Volkswirtschaftslehre** (28 Einträge: 27 Schemata FS 1/2 + Definitionen-Glossar mit 103 Begriffen; erstmals interaktive Regler-Tools und Glossar-Rubrik, dafür `styles.css` und `app.js` erweitert) – damit 169 Schemata in 9 Fächern; Service-Worker-Cache auf `pruefungstrainer-v10` erhöht.
 
 **Update 05.07.2026 (2):** Neues Fach **Beamtenrecht** (Modul 6, 21 Schemata, alle FS 2) ergänzt – damit 141 Schemata in 8 Fächern; Service-Worker-Cache auf `pruefungstrainer-v9` erhöht.
 
