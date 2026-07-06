@@ -1,5 +1,5 @@
 /* Prüfungstrainer – Service Worker: App-Shell offline verfügbar machen */
-var CACHE = "pruefungstrainer-v10";
+var CACHE = "pruefungstrainer-v11";
 var ASSETS = [
   "./",
   "./index.html",
@@ -33,6 +33,24 @@ var ASSETS = [
   "./schema-vwl-bip-bne-konzepte.js",
   "./schema-vwl-vgr-rechner.js",
   "./schema-vwl-glossar.js",
+  "./schema-irw-intern-extern.js",
+  "./schema-irw-kostenrechnungssysteme.js",
+  "./schema-irw-stromgroessen.js",
+  "./schema-irw-aufwand-kosten.js",
+  "./schema-irw-kostenarten.js",
+  "./schema-irw-einzel-gemein.js",
+  "./schema-irw-fix-variabel.js",
+  "./schema-irw-materialkosten.js",
+  "./schema-irw-kalk-abschreibung.js",
+  "./schema-irw-kalk-zinsen.js",
+  "./schema-irw-kostenstellen.js",
+  "./schema-irw-bab-primaer.js",
+  "./schema-irw-ilv-simulator.js",
+  "./schema-irw-kostentraeger.js",
+  "./schema-irw-kalkverfahren-wahl.js",
+  "./schema-irw-divisionskalkulation.js",
+  "./schema-irw-aequivalenzziffern.js",
+  "./schema-irw-glossar.js",
   "./schema-br-beamtenverhaeltnis.js",
   "./schema-br-laufbahnbewerber.js",
   "./schema-br-befoerderung.js",

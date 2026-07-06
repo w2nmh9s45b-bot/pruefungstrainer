@@ -12,7 +12,7 @@
     },
     "Modul 3": {
       icon: "📈",
-      desc: "Wirtschaft – Volkswirtschaftslehre (Markt und Preis, Wettbewerb, Konjunktur, Inflation, VGR); Platz für Internes Rechnungswesen"
+      desc: "Wirtschaft – Volkswirtschaftslehre (Markt und Preis, Wettbewerb, Konjunktur, Inflation, VGR) und Internes Rechnungswesen (KLR: Kostenarten, Kostenstellen/BAB, Kalkulation)"
     },
     "Modul 5": {
       icon: "🏛️",
@@ -58,6 +58,11 @@
       module: "Modul 3",
       icon: "📈",
       desc: "Mikro- und Makroökonomie ohne Gutachtenstil: Diagnose-Bäume, interaktive Rechner und Schieberegler zu Gütern und Bedürfnissen, Markt und Preisbildung, Elastizitäten, Wettbewerb (GWB), Arbeitsmarkt, Konjunktur, magischem Viereck (§ 1 StWG), Inflation/VPI, Geld und VGR – plus Glossar mit allen Definitionen"
+    },
+    "Internes Rechnungswesen": {
+      module: "Modul 3",
+      icon: "🧮",
+      desc: "Kosten- und Leistungsrechnung der Verwaltung (§ 12 GemHVO): Begriffssystematik (Auszahlung/Aufwand/Kosten), Kostenarten (Material, kalk. Abschreibung und Zinsen), Kostenstellen mit BAB und innerbetrieblicher Leistungsverrechnung, Kalkulation (Division, Äquivalenzziffern) – mit Rechnern, Simulatoren und Definitionen-Glossar"
     },
     "Arbeits- und Tarifrecht": {
       module: "Modul 6",
